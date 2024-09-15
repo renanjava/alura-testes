@@ -1,20 +1,23 @@
 import Colaborador from "./Colaborador";
-import Sistema from "./Sistema";
 import { Cargos } from "./enum/cargos";
+import { GeraRelatorio } from "./GeraRelatorio";
+import { Pagamento } from "./Pagamento";
+import { QuadroDeColaboradores } from "./QuadroColaboradores";
 
-const sistema = new Sistema();
-
+const geraRelatorio = new GeraRelatorio();
+const quadroDeColaboradores = new QuadroDeColaboradores();
+const pagamento = new Pagamento();
 
 const colaborador1 = new Colaborador("José", Cargos.Estagiario);
 const colaborador2 = new Colaborador("Maria", Cargos.Junior);
 const colaborador3 = new Colaborador("João", Cargos.Pleno);
 
-sistema.contratarColaborador(colaborador1);
-sistema.contratarColaborador(colaborador2);
-sistema.contratarColaborador(colaborador3);
+quadroDeColaboradores.contratarColaborador(colaborador1);
+quadroDeColaboradores.contratarColaborador(colaborador2);
+quadroDeColaboradores.contratarColaborador(colaborador3);
 
-console.log(sistema.gerarRelatorioJSON());
+console.log(geraRelatorio.gerarRelatorioJSON());
 
 console.log(colaborador1);
-sistema.pagaColaborador(colaborador1);
+pagamento.pagaColaborador(colaborador1);
 console.log(colaborador1);
