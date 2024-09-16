@@ -1,31 +1,29 @@
-
-abstract class Funcionario {
+interface Funcionario {
     nome: string;
     cargaHoraria: number;
 
-    constructor(nome: string, cargaHoraria: number) {
-        this.nome = nome;
-        this.cargaHoraria = cargaHoraria;
-    }
+    trabalha(): void;
 }
 
 interface IFuncionarioEfetivo extends Funcionario {
     salario: number;
 
-    trabalha(): void;
     calculaSalarioLiquido(): number;
     calculaParticipacaoDeLucros(lucro: number): number;
 }
 
 interface IFuncionarioVoluntario extends Funcionario {
-
     escreveRelatorio(): void;
 }
 
-class FuncionarioEfetivo extends Funcionario implements IFuncionarioEfetivo {
-    public salario: number;
+class FuncionarioEfetivo implements IFuncionarioEfetivo {
+    salario: number;
+    nome: string;
+    cargaHoraria: number;
+
     constructor(nome: string, cargaHoraria: number, salario: number) {
-        super(nome, cargaHoraria);
+        this.nome = nome;
+        this.cargaHoraria = cargaHoraria;
         this.salario = salario;
     }
 
@@ -43,11 +41,14 @@ class FuncionarioEfetivo extends Funcionario implements IFuncionarioEfetivo {
     }
 }
 
-class FuncionarioVoluntario extends Funcionario implements IFuncionarioVoluntario {
+class FuncionarioVoluntario implements IFuncionarioVoluntario {
     orientador: Funcionario;
+    nome: string;
+    cargaHoraria: number;
 
     constructor(nome: string, cargaHorariaExtensao: number, funciarioEfetivo: Funcionario) {
-        super(nome, cargaHorariaExtensao);
+        this.nome = nome;
+        this.cargaHoraria = cargaHorariaExtensao;
         this.orientador = funciarioEfetivo;
     }
 
@@ -71,6 +72,4 @@ console.log("salário com PL:", funcionarioEfetivo.calculaParticipacaoDeLucros(2
 
 //Voluntário
 console.log("nome:", funcionarioVoluntario.nome);
-console.log("salário bruto:",);
-console.log("salário líquido:",);
-console.log("salário com PL:",); 
+funcionarioVoluntario.escreveRelatorio();
