@@ -1,48 +1,44 @@
 {
-    const GANHO_POR_HORA_CLT = 24;
-    const CARGA_HORARIA_DIARIA_CLT = 8;
-
-    const GANHO_POR_HORA_ESTAGIARIO = 14;
-    const CARGA_HORARIA_DIARIA_ESTAGIARIO = 4;
-
-    const GANHO_POR_HORA_PJ = 30;
-    const CARGA_HORARIA_DIARIA_PJ = 8;
-
     const MES_COMERCIAL = 20; //dias trabalhados no mês
 
     interface ContratoRemuneravel{
         titulo: string;
-    
         remuneracao():number;
     }
-    
+
     class ContratoClt implements ContratoRemuneravel{
         titulo: string = 'CLT';
+        private _GANHO_POR_HORA_CLT = 24;
+        private _CARGA_HORARIA_DIARIA_CLT = 8;
 
         remuneracao(): number {
-            return GANHO_POR_HORA_CLT * CARGA_HORARIA_DIARIA_CLT * MES_COMERCIAL;
+            return this._GANHO_POR_HORA_CLT * this._CARGA_HORARIA_DIARIA_CLT;
         }
     }
 
     class Estagio implements ContratoRemuneravel{
         titulo: string = 'Estágio';
+        private _GANHO_POR_HORA_ESTAGIARIO = 14;
+        private _CARGA_HORARIA_DIARIA_ESTAGIARIO = 4;
 
         remuneracao(): number {
-            return GANHO_POR_HORA_ESTAGIARIO * CARGA_HORARIA_DIARIA_ESTAGIARIO * MES_COMERCIAL;
+            return this._GANHO_POR_HORA_ESTAGIARIO * this._CARGA_HORARIA_DIARIA_ESTAGIARIO;
         }
     }
 
     class Pj implements ContratoRemuneravel{
         titulo: string = 'PJ';
+        private _GANHO_POR_HORA_PJ = 30;
+        private _CARGA_HORARIA_DIARIA_PJ = 8;
 
         remuneracao(): number {
-            return GANHO_POR_HORA_PJ * CARGA_HORARIA_DIARIA_PJ * MES_COMERCIAL;
+            return this._GANHO_POR_HORA_PJ * this._CARGA_HORARIA_DIARIA_PJ;
         }
     }
 
     class FolhaDePagamento {
         static calcularSalarioMensal(funcionario: ContratoRemuneravel): number {
-            return funcionario.remuneracao();
+            return funcionario.remuneracao() * MES_COMERCIAL;
         }
     }
 
