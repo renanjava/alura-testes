@@ -2,12 +2,12 @@ import { CalculaSalario } from "./CalculaSalario";
 import Colaborador from "./Colaborador";
 
 export class GeraRelatorio{
-    private _quadroDeColaboradores: Colaborador[] = [];
-    private _servicoCalculaSalario: CalculaSalario = new CalculaSalario;
-    
-    gerarRelatorioJSON() {
-
-        let relatorio = this._quadroDeColaboradores.map((colaborador) => {
+    constructor(
+        private _quadroDeColaboradores: Colaborador[],
+        private _servicoCalculaSalario: CalculaSalario
+    ){}
+    gerarJSON() {
+        const relatorio = this._quadroDeColaboradores.map((colaborador) => {
             return ({
                 nome: colaborador.nome,
                 cargo: colaborador.cargo,

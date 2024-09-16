@@ -2,7 +2,7 @@ import { CalculaSalario } from "./CalculaSalario";
 import Colaborador from "./Colaborador";
 
 export class Pagamento{
-    private _servicoCalculaSalario: CalculaSalario = new CalculaSalario;
+    constructor(private _servicoCalculaSalario: CalculaSalario){}
 
     public pagaColaborador(colaborador: Colaborador): void {
         const salarioColaborador = this._servicoCalculaSalario.calcular(colaborador.cargo);
