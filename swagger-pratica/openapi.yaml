@@ -43,6 +43,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Deck'
+      security: 
+      - auth: []
     get:
       summary: 'retorna todos os decks do banco de dados'
       responses:
@@ -54,6 +56,8 @@ paths:
                 type: array
                 items:
                   $ref: '#/components/schemas/Deck'
+      security: 
+      - auth: []
   /decks/{id}:
     parameters: 
       - name: id
@@ -75,6 +79,8 @@ paths:
           content:
             application/json:
               example: 'não encontrado'
+      security: 
+      - auth: []
     put:
       summary: 'atualiza um deck pelo id'
       requestBody:
@@ -103,6 +109,8 @@ paths:
           content:
             application/json:
               example: 'não encontrado'
+      security: 
+      - auth: []
     delete:
       summary: 'retorna um deck pelo id'
       responses:
@@ -116,6 +124,8 @@ paths:
           content:
             application/json:
               example: 'não encontrado'
+      security: 
+      - auth: []
 components:
   schemas:
     Card:
@@ -184,7 +194,6 @@ components:
                 type: string
               text:
                 type: string
-
     Deck:
       type: object
       properties:
@@ -196,3 +205,8 @@ components:
             $ref: '#/components/schemas/Card'
         userId:
           type: string
+  securitySchemes:
+    auth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
