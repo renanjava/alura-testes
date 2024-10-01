@@ -1,0 +1,112 @@
+openapi: 3.0.1
+info:
+  title: MTG API
+  description: API desenvolvida para estudos, feita para a disciplina Desafio Profissional. (Link para o github)[https://github.com/renanjava/esoft-6s-2024]
+  version: 0.0.1
+  termsOfService: https://docs.nestjs.com/
+  contact: 
+    name: Contact
+    url: https://github.com/renanjava
+  license:
+    name: GPLv3
+    url: https://www.gnu.org/licenses/gpl-3.0.pt-br.html
+externalDocs:
+  description: Nestjs
+  url: https://docs.nestjs.com/
+servers:
+- url: 'http://localhost:3000'
+  description: MTG-API
+paths:
+  /decks:
+    get:
+      summary: retorna todos os decks do banco de dados
+      responses:
+        200:
+          description: sucesso
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Deck'
+
+components:
+  schemas:
+    Card:
+      type: object
+      properties:
+        name:
+          type: string
+        manaCost:
+          type: string
+        cmc:
+          type: integer
+        colors:
+          type: array
+          items:
+            type: string
+        colorIdentity:
+          type: array
+          items:
+            type: string
+        type:
+          type: string
+        supertypes:
+          type: array
+          items:
+            type: string
+        types:
+          type: array
+          items:
+            type: string
+        subtypes:
+          type: array
+          items:
+            type: string
+        rarity:
+          type: string
+        set:
+          type: string
+        setName:
+          type: string
+        text:
+          type: string
+        artist:
+          type: string
+        number:
+          type: string
+        power:
+          type: string
+        toughness:
+          type: string
+        layout:
+          type: string
+        multiverseid:
+          type: string
+        imageUrl:
+          type: string
+        variations:
+          type: array
+          items:
+            type: string
+        rulings:
+          type: array
+          items:
+            type: object
+            properties:
+              date:
+                type: string
+              text:
+                type: string
+
+    Deck:
+      type: object
+      properties:
+        commander:
+          type: string
+        cards:
+          type: array
+          items:
+            $ref: '#/components/schemas/Card'
+        userId:
+          type: string
