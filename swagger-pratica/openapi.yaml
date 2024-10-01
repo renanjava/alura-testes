@@ -18,18 +18,104 @@ servers:
   description: MTG-API
 paths:
   /decks:
-    get:
-      summary: retorna todos os decks do banco de dados
+    post:
+      summary: 'cadastra um deck no banco de dados'
+      requestBody:
+        content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  commanderName:
+                    type: string
+                  cards:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Card'
+                  userId:
+                    type: string
       responses:
-        200:
-          description: sucesso
+        201:
+          description: 'sucesso'
           content:
             application/json:
               schema:
                 type: array
                 items:
                   $ref: '#/components/schemas/Deck'
-
+    get:
+      summary: 'retorna todos os decks do banco de dados'
+      responses:
+        200:
+          description: 'sucesso'
+          content:
+            application/json:
+              schema:
+                type: array
+                items:
+                  $ref: '#/components/schemas/Deck'
+  /decks/{id}:
+    parameters: 
+      - name: id
+        in: path
+        schema:
+          type: integer
+        required: true
+    get:
+      summary: 'retorna um deck pelo id'
+      responses:
+        200:
+          description: 'sucesso'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+        404:
+          description: 'não encontrado'
+          content:
+            application/json:
+              example: 'não encontrado'
+    put:
+      summary: 'atualiza um deck pelo id'
+      requestBody:
+        content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  commanderName:
+                    type: string
+                  cards:
+                    type: array
+                    items:
+                      $ref: '#/components/schemas/Card'
+                  userId:
+                    type: string
+      responses:
+        200:
+          description: 'sucesso'
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Deck'
+        404:
+          description: 'não encontrado'
+          content:
+            application/json:
+              example: 'não encontrado'
+    delete:
+      summary: 'retorna um deck pelo id'
+      responses:
+        200:
+          description: 'sucesso'
+          content:
+            application/json:
+              example: 'deck deletado'
+        404:
+          description: 'não encontrado'
+          content:
+            application/json:
+              example: 'não encontrado'
 components:
   schemas:
     Card:
