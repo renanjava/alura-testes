@@ -1,0 +1,21 @@
+version: "3.9"
+services:
+  mongodb:
+    image: mongo:4.4.6
+    container_name: meu-mongo
+    networks:
+      - minha-bridge
+
+  app-node:
+    image: renancesu/app-node:0.6
+    container_name: meu-container
+    networks:
+      - minha-bridge
+    ports:
+      - 3000:3000
+    depends_on:
+      - mongodb
+
+networks:
+  minha-bridge:
+    driver: bridge

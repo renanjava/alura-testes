@@ -1,0 +1,16 @@
+Teste a conectividade do seu computador com o servidor que armazena a plataforma da Alura.
+    ping www.alura.com.br
+
+Verifique as direções que mensagens enviadas do seu computador para a plataforma da Alura seguem.
+    tracert www.alura.com.br
+
+Teste a conectividade do seu computador com a página www.utwente.nl.
+    ping www.utwente.nl
+
+Verifique as direções que mensagens enviadas do seu computador para o site www.utwente.nl seguem.
+    tracert www.utwente.nl
+
+Analise a diferença nas respostas obtidas. Como você a explica?
+    as direções no rastreamento da alura e utwente foram praticamente iguais, mas, 
+    a do utwente demorou muito mais pois é um servidor da Europa, 
+    ocasionando mais latência até chegar no meu dispositivo
