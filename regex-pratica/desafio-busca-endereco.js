@@ -1,7 +1,7 @@
 const fs = require('fs')
-const databaseCsv = './data/database.csv'
+const databaseCsv = './data/desafio.csv'
 const database = fs.readFileSync(databaseCsv, 'utf-8')
 
-const regex = /[0-9]{2}[/.*]?[0-9]{2}[/.*]?[0-9]{4}$/gm
+const regex = /([^,\n]*\,\s\d+[a-z[A-Z]?\,\s\CEP\s\d{5}\-\d{3})/g
 const matchRegex = database.match(regex)
 console.log(matchRegex);
