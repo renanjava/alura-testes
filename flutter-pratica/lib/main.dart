@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test/lista-transferencia.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -6,22 +7,7 @@ void main() {
       appBar: AppBar(
         title: Text('Transferências'),
       ),
-      body: Column(
-        children: [
-          Card(
-              child: ListTile(
-            leading: Icon(Icons.monetization_on),
-          )),
-          Card(
-              child: ListTile(
-            leading: Icon(Icons.monetization_on),
-          )),
-          Card(
-              child: ListTile(
-            leading: Icon(Icons.monetization_on),
-          )),
-        ],
-      ),
+      body: ListaTransferecia(),
       floatingActionButton:
           FloatingActionButton(onPressed: () {}, child: Icon(Icons.add)),
     ),
