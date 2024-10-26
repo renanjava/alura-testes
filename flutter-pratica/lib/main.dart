@@ -1,23 +1,18 @@
 import 'package:flutter/material.dart';
-import 'package:test/transferencias/lista-transferencia.dart';
+import 'package:test/transferencias/form-transferencia.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(const FlutterAlura());
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+class FlutterAlura extends StatelessWidget {
+  const FlutterAlura({super.key});
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       home: Scaffold(
-        appBar: AppBar(
-          title: const Text('Transferências'),
-        ),
-        body: const ListaTransferecia(),
-        floatingActionButton: FloatingActionButton(
-            onPressed: () {}, child: const Icon(Icons.add)),
+        body: FormularioTransferencia(),
       ),
     );
   }

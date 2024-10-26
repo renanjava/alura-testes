@@ -7,12 +7,19 @@ class ListaTransferecia extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Column(
-      children: [
-        ItemTransferencia('renan', 'flutter'),
-        ItemTransferencia('rhayssa', 'trainee'),
-        ItemTransferencia('valorant', 'vandal'),
-      ],
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text('Transferências'),
+      ),
+      body: const Column(
+        children: [
+          ItemTransferencia('renan', 'flutter'),
+          ItemTransferencia('rhayssa', 'trainee'),
+          ItemTransferencia('valorant', 'vandal'),
+        ],
+      ),
+      floatingActionButton:
+          FloatingActionButton(onPressed: () {}, child: const Icon(Icons.add)),
     );
   }
 }
