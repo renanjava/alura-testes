@@ -1,0 +1,14 @@
+server {
+    listen 80;
+    server_name localhost;
+
+    location / {
+        root C:\Users\renan\OneDrive\Área de Trabalho\nginx\;
+        index index.html;
+    }
+
+    location ~ \.php${
+        proxy_pass http://localhost:8000;
+    }
+    error_page 404 400 401 /error.html;
+}

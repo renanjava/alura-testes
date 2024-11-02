@@ -1,0 +1,19 @@
+server {
+    listen 8081;
+    server_name localhost;
+
+    location / {
+        root C:\Users\renan\OneDrive\Área de Trabalho\nginx\servico1\;
+        index index.html;
+    }
+}
+
+server {
+    listen 8082;
+    server_name localhost;
+
+    location / {
+        root C:\Users\renan\OneDrive\Área de Trabalho\nginx\servico2\;
+        index index.html;
+    }
+}
