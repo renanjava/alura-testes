@@ -1,19 +1,29 @@
-server {
-    listen 8081;
-    server_name localhost;
+http {
+    log_format custom_format Remote_addr: $http_x_real_ip 
+                             Time_local: [$time_local] 
+                             Request: $request
+                             Status: $status;
+    server {
+        listen 8081;
+        server_name localhost;
 
-    location / {
-        root C:\Users\renan\OneDrive\Área de Trabalho\nginx\servico1\;
-        index index.html;
+        location / {
+            root C:\Users\renan\OneDrive\Área de Trabalho\nginx\servico1\;
+            index index.html;
+        }
+
+        access_log C:\Users\renan\OneDrive\Área de Trabalho\nginx\logs\access_servico1.log custom_format;
     }
-}
 
-server {
-    listen 8082;
-    server_name localhost;
+    server {
+        listen 8082;
+        server_name localhost;
 
-    location / {
-        root C:\Users\renan\OneDrive\Área de Trabalho\nginx\servico2\;
-        index index.html;
+        location / {
+            root C:\Users\renan\OneDrive\Área de Trabalho\nginx\servico2\;
+            index index.html;
+        }
+
+        access_log C:\Users\renan\OneDrive\Área de Trabalho\nginx\logs\access_servico2.log custom_format;
     }
 }
