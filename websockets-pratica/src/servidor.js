@@ -17,6 +17,4 @@ servidorHttp.listen(porta, () => console.log(`disponivel em ${porta}`));
 
 const io = new Server(servidorHttp);
 
-io.on("connection", () => {
-    console.log("um cliente se conectou");
-})
+export default io;
