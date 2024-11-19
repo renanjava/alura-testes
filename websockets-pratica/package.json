@@ -2,11 +2,11 @@
   "name": "websockets-pratica",
   "version": "1.0.0",
   "description": "",
-  "main": "index.js",
+  "main": "socket.back.js",
   "type": "module",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon src/servidor.js"
+    "dev": "nodemon src/socket.back.js"
   },
   "keywords": [],
   "author": "",

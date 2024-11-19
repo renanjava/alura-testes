@@ -1,5 +1,9 @@
-import io from "./servidor";
+import io from "./servidor.js";
 
 io.on("connection", (socket) => {
     console.log(`um cliente se conectou ${socket.id}`);
-})
+
+    socket.on("texto_editor", (texto) => {
+        socket.broadcast.emit("texto_editor_clientes", texto)
+    });
+});
