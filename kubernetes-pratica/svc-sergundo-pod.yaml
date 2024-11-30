@@ -7,5 +7,6 @@ spec:
   selector:
     app: segundo-pod
   ports:
-    - port: 
+    - port: 9000
+      targetPort: 80
   
