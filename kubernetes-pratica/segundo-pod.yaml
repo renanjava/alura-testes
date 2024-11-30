@@ -2,6 +2,8 @@ apiVersion: v1
 kind: Pod
 metadata:
   name: Meu segundo Pod
+  labels:
+    app: segundo-pod
 spec:
   containers:
     - name: mongo-container
