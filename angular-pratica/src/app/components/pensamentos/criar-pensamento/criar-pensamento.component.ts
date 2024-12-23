@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'
+import { RouterModule } from '@angular/router';
 
 @Component({
   selector: 'app-criar-pensamento',
-  imports: [FormsModule],
+  imports: [FormsModule, RouterModule],
   templateUrl: './criar-pensamento.component.html',
   styleUrl: './criar-pensamento.component.css'
 })
