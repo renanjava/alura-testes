@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'
 import { RouterModule } from '@angular/router';
+import { IPensamento } from '../../../interfaces/pensamento.interface';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -10,8 +11,8 @@ import { RouterModule } from '@angular/router';
 })
 export class CriarPensamentoComponent implements OnInit{
 
-  pensamento = {
-    id: '1',
+  pensamento: IPensamento = {
+    id: 1,
     conteudo: 'Aprendendo Angular',
     autoria: 'Dev',
     modelo: 'modelo2',

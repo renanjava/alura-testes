@@ -1,0 +1,11 @@
+<div class="pensamento {{ pensamento.modelo }} ff-roboto-mono" [ngClass]="larguraPensamento()">
+    <img src="/src/assets/images/{{ pensamento.modelo }}.png" alt="Áspas coloridas">
+    <p class="conteudo">{{ pensamento.conteudo }}</p>
+    <p class="conteudo"><b>{{ pensamento.autoria }}</b></p>
+    <div class="acoes">
+        <button class="botao-editar">
+            <img src="/src/assets/images/icone-editar.png" alt="Ícone de editar">
+            <img src="/src/assets/images/icone-excluir.png" alt="Ícone de excluir">
+        </button>
+    </div>
+</div>

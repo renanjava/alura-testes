@@ -1,0 +1,22 @@
+{
+    "pensamentos": [
+        {
+            "id": 1,
+            "conteudo": "1 - i love angular json-server",
+            "autoria": "renan",
+            "modelo": "modelo2"
+        },
+        {
+            "id": 2,
+            "conteudo": "2 - i love angular json-server",
+            "autoria": "renan",
+            "modelo": "modelo3"
+        },
+        {
+            "id": 3,
+            "conteudo": "3 - i love angular json-server",
+            "autoria": "renan",
+            "modelo": "modelo1"
+        }
+    ]
+}
