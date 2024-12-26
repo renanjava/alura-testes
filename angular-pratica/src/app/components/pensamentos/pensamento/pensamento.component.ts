@@ -1,10 +1,11 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { IPensamento } from '../../../interfaces/pensamento.interface';
 import { CommonModule } from '@angular/common';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-pensamento',
-  imports: [CommonModule],
+  imports: [CommonModule, RouterLink],
   templateUrl: './pensamento.component.html',
   styleUrl: './pensamento.component.css'
 })
