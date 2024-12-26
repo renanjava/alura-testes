@@ -22,9 +22,12 @@ export class PensamentoService {
 
   excluir(id: number): Observable<IPensamento> {
     const url = `${this.API}/${id}`
-    console.log(url);
-    
     return this.http.delete<IPensamento>(url)
+  }
+
+  editar(pensamento: IPensamento): Observable<IPensamento>{
+    const url = `${this.API}/${pensamento.id}`
+    return this.http.put<IPensamento>(url, pensamento)
   }
 
   getById(id: number): Observable<IPensamento> {
