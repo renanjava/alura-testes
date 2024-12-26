@@ -1,7 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { FormsModule } from '@angular/forms'
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { IPensamento } from '../../../interfaces/pensamento.interface';
+import { PensamentoService } from '../../../services/pensamento.service';
 
 @Component({
   selector: 'app-criar-pensamento',
@@ -12,22 +13,25 @@ import { IPensamento } from '../../../interfaces/pensamento.interface';
 export class CriarPensamentoComponent implements OnInit{
 
   pensamento: IPensamento = {
-    id: 1,
-    conteudo: 'Aprendendo Angular',
-    autoria: 'Dev',
-    modelo: 'modelo2',
+    conteudo: '',
+    autoria: '',
+    modelo: 'modelo1'
   }
-
-  constructor() { }
+  constructor(
+    private readonly pensamentoService: PensamentoService, 
+    private readonly router: Router
+  ) { }
 
   ngOnInit(): void {
   }
 
   criarPensamento(){
-    alert("novo pensamento criado")
+    this.pensamentoService.criar(this.pensamento).subscribe(() => {
+      this.router.navigate(['/listarPensamento'])
+    })
   }
 
   cancelarPensamento(){
-    alert("pensamento cancelado")
+    this.router.navigate(['/listarPensamento'])
   }
 }

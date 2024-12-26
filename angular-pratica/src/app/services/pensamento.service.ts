@@ -1,4 +1,4 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { IPensamento } from '../interfaces/pensamento.interface';
 import { Observable } from 'rxjs';
@@ -13,5 +13,9 @@ export class PensamentoService {
 
   listar(): Observable<IPensamento[]> {
     return this.http.get<IPensamento[]>(this.API)
+  }
+
+  criar(pensamento: IPensamento): Observable<IPensamento> {
+    return this.http.post<IPensamento>(this.API, pensamento);
   }
 }

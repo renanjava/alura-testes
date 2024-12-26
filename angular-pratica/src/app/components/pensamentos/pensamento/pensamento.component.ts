@@ -12,7 +12,6 @@ export class PensamentoComponent implements OnInit{
 
   @Input()
   pensamento: IPensamento = {
-    id: 20,
     conteudo: "i love angular",
     autoria: "renan",
     modelo: "modelo3"
