@@ -4,19 +4,19 @@
     </header>
     <form action="">
         <label for="pensamento">Pensamento</label>
-        <input 
-            type="textare" 
-            class="input" 
-            name="pensamento" 
+        <input
+            type="textare"
+            class="input"
+            name="pensamento"
             id="pensamento"
             placeholder="Digite um pensamento"
             [(ngModel)]="pensamento.conteudo"
         >
         <label for="pensamento">Autoria ou Fonte</label>
-        <input 
-            type="textare" 
-            class="input" 
-            name="autoria" 
+        <input
+            type="textare"
+            class="input"
+            name="autoria"
             id="pensamento"
             placeholder="Digite a Autoria ou Fonte"
             [(ngModel)]="pensamento.autoria"
@@ -25,7 +25,7 @@
         <div class="container-radio">
             <div class="radio-modelo">
                 <label for="modelo1">
-                    <input 
+                    <input
                     type="radio"
                     id="modelo1"
                     value="modelo1"
@@ -39,14 +39,14 @@
                 </label>
                 Previa:
                 <div class="modelo modelo1 ff-roboto-mono">
-                    <img src="../../../../assets/images/modelo1.png" alt="Aspas azuis">
+                    <img src="assets/images/modelo1.png" alt="Aspas azuis">
                     <p class="conteudo">{{ pensamento.conteudo }}</p>
                     <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
                 <label for="modelo2">
-                    <input 
+                    <input
                     type="radio"
                     id="modelo2"
                     value="modelo2"
@@ -60,14 +60,14 @@
                 </label>
                 Previa:
                 <div class="modelo modelo2 ff-roboto-mono">
-                    <img src="../../../../assets/images/modelo1.png" alt="Aspas azuis claro">
+                    <img src="assets/images/modelo2.png" alt="Aspas azuis claro">
                     <p class="conteudo">{{ pensamento.conteudo }}</p>
                     <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
             </div>
             <div class="radio-modelo">
                 <label for="modelo3">
-                    <input 
+                    <input
                     type="radio"
                     id="modelo3"
                     value="modelo3"
@@ -81,7 +81,7 @@
                 </label>
                 Previa:
                 <div class="modelo modelo3 ff-roboto-mono">
-                    <img src="../../../../assets/images/modelo1.png" alt="Aspas verdes">
+                    <img src="assets/images/modelo3.png" alt="Aspas verdes">
                     <p class="conteudo">{{ pensamento.conteudo }}</p>
                     <p class="autoria"><b>{{ pensamento.autoria }}</b></p>
                 </div>
