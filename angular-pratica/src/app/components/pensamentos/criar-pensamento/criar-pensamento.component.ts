@@ -2,10 +2,11 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators } from '@angular/forms'
 import { Router, RouterModule } from '@angular/router';
 import { PensamentoService } from '../../../services/pensamento.service';
+import { CommonModule } from '@angular/common';
 
 @Component({
   selector: 'app-criar-pensamento',
-  imports: [FormsModule, RouterModule, ReactiveFormsModule],
+  imports: [FormsModule, RouterModule, ReactiveFormsModule, CommonModule],
   templateUrl: './criar-pensamento.component.html',
   styleUrl: './criar-pensamento.component.css'
 })
@@ -44,5 +45,13 @@ export class CriarPensamentoComponent implements OnInit{
 
   cancelarPensamento(){
     this.router.navigate(['/listarPensamento'])
+  }
+
+  habilitarBotao(): string{
+    if(this.formulario.valid){
+      return 'botao'
+    }else{
+      return 'botao__desabilitado'
+    }
   }
 }
