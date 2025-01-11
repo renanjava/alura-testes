@@ -2,6 +2,7 @@ import { Component, Input, OnInit } from '@angular/core';
 import { IPensamento } from '../../../interfaces/pensamento.interface';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { PensamentoService } from '../../../services/pensamento.service';
 
 @Component({
   selector: 'app-pensamento',
@@ -15,9 +16,12 @@ export class PensamentoComponent implements OnInit{
   pensamento: IPensamento = {
     conteudo: "i love angular",
     autoria: "renan",
-    modelo: "modelo3"
+    modelo: "modelo3",
+    favorito: false,
   }
-  constructor() { }
+  constructor(
+    private readonly pensamentoService: PensamentoService
+  ) { }
 
   ngOnInit(): void {
 
@@ -25,5 +29,16 @@ export class PensamentoComponent implements OnInit{
 
   larguraPensamento(): string{
     return (this.pensamento.conteudo.length >= 256 ? 'pensamento-g' : 'pensamento-p');
+  }
+
+  mudarIconeFavorito(): string {
+    if(this.pensamento.favorito == false)
+      return 'inativo'
+    else
+      return 'ativo'
+  }
+
+  atualizarFavoritos() {
+    this.pensamentoService.mudarFavorito(this.pensamento).subscribe()
   }
 }
