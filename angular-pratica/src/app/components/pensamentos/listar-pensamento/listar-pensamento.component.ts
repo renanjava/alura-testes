@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { RouterModule } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 import { PensamentoComponent } from '../pensamento/pensamento.component';
 import { CommonModule } from '@angular/common';
 import { IPensamento } from '../../../interfaces/pensamento.interface';
@@ -19,17 +19,23 @@ export class ListarPensamentoComponent implements OnInit{
   paginaAtual: number = 1
   haMaisPensamentos: boolean = true
   campoFiltro: string = ''
+  favoritos: boolean = false
+  listaFavoritos: IPensamento[] = []
 
-  constructor(private readonly pensamentoService: PensamentoService){}
+  constructor(
+    private readonly pensamentoService: PensamentoService,
+    private readonly router: Router
+  ){}
 
   ngOnInit(): void {
-    this.pensamentoService.listar(this.paginaAtual, this.campoFiltro).subscribe((listaPensamentos) => {
+    this.pensamentoService.listar(this.paginaAtual, this.campoFiltro, this.favoritos)
+    .subscribe((listaPensamentos) => {
       this.listaPensamentos = listaPensamentos
     });
   }
 
   carregarMaisPensamentos(){
-    this.pensamentoService.listar(++this.paginaAtual, this.campoFiltro)
+    this.pensamentoService.listar(++this.paginaAtual, this.campoFiltro, this.favoritos)
     .subscribe((listaPensamentos) => {
       this.listaPensamentos.push(...listaPensamentos)
       if(!listaPensamentos.length){
@@ -38,11 +44,33 @@ export class ListarPensamentoComponent implements OnInit{
     })
   }
 
-  pesquisarPensamentos(){
+  pesquisarPensamentos() {
     this.haMaisPensamentos = true
     this.paginaAtual = 1
-    this.pensamentoService.listar(this.paginaAtual, this.campoFiltro).subscribe(listaPensamentos => {
+    this.pensamentoService.listar(this.paginaAtual, this.campoFiltro, this.favoritos)
+    .subscribe(listaPensamentos => {
       this.listaPensamentos = listaPensamentos
+    })
+  }
+
+  recarregarComponente() {
+
+    this.favoritos = false
+    this.paginaAtual = 1
+
+    this.router.routeReuseStrategy.shouldReuseRoute = () => false
+    this.router.onSameUrlNavigation = 'reload'
+    this.router.navigate([this.router.url])
+  }
+
+  listarFavoritos() {
+    this.favoritos = true
+    this.haMaisPensamentos = true
+    this.paginaAtual = 1
+    this.pensamentoService.listar(this.paginaAtual, this.campoFiltro, this.favoritos)
+    .subscribe(listaPensamentosFavoritos => {
+      this.listaPensamentos = listaPensamentosFavoritos
+      this.listaFavoritos = listaPensamentosFavoritos
     })
   }
 }

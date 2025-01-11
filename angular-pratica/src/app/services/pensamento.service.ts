@@ -11,11 +11,31 @@ export class PensamentoService {
 
   constructor(private readonly http: HttpClient) { }
 
-  listar(pagina: number, filtro: string): Observable<IPensamento[]> {
+  listar(pagina: number, filtro: string, favoritos: boolean): Observable<IPensamento[]> {
     const limiteElementosPorPagina = 6
+
     let params = new HttpParams()
     .set('_page', pagina)
     .set('_limit', limiteElementosPorPagina)
+
+    if(filtro.trim().length > 2) {
+      params = params.set('q', filtro)
+    }
+    if(favoritos) {
+      params = params.set('favorito', true)
+    }
+
+    return this.http.get<IPensamento[]>(this.API, { params: params})
+  }
+
+  listarPensamentosFavoritos(pagina: number, filtro: string): Observable<IPensamento[]>{
+    const limiteElementosPorPagina = 6
+
+    let params = new HttpParams()
+    .set('_page', pagina)
+    .set('_limit', limiteElementosPorPagina)
+    .set('favorito', true)
+
     if(filtro.trim().length > 2) {
       params = params.set('q', filtro)
     }
