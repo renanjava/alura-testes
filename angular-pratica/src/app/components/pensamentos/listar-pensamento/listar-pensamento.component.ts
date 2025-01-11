@@ -21,6 +21,7 @@ export class ListarPensamentoComponent implements OnInit{
   campoFiltro: string = ''
   favoritos: boolean = false
   listaFavoritos: IPensamento[] = []
+  titulo: string = 'Meu Mural'
 
   constructor(
     private readonly pensamentoService: PensamentoService,
@@ -64,6 +65,7 @@ export class ListarPensamentoComponent implements OnInit{
   }
 
   listarFavoritos() {
+    this.titulo = 'Meus Favoritos'
     this.favoritos = true
     this.haMaisPensamentos = true
     this.paginaAtual = 1
