@@ -11,10 +11,10 @@ class Home extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
+    return const Scaffold(
       body: SingleChildScrollView(
         child: Column(
-          children: const <Widget>[
+          children: <Widget>[
             Header(), // cuidado com o const
             RecentActivity(),
             ActionsSection(),
