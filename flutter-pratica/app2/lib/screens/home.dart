@@ -2,7 +2,6 @@ import 'package:estilizacao_componentes/components/sections/actions.dart';
 import 'package:estilizacao_componentes/components/sections/header.dart';
 import 'package:estilizacao_componentes/components/sections/points_exchange.dart';
 import 'package:estilizacao_componentes/components/sections/recent_activities.dart';
-import 'package:estilizacao_componentes/data/bank_http.dart';
 import 'package:flutter/material.dart';
 
 class Home extends StatelessWidget {
