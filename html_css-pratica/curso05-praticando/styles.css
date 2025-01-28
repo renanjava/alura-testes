@@ -31,6 +31,10 @@ body {
     grid-template-columns: 50% 50%;
 }
 
+.container__imagem {
+    margin: 1em 0 2em 0;
+}
+
 .container__titulo {
     font-size: 28px;
     font-weight: 700;
@@ -43,6 +47,7 @@ body {
     display: block;
     color: var(--branco-principal);
     text-decoration: none;
+    margin-bottom: 1em;
 }
 
 .container__aviso {
@@ -53,4 +58,8 @@ body {
 .botao_secundario {
     background-color: transparent;
     border: solid 2px var(--branco-principal);
+}
+
+.container__caixa{
+    margin: 0 6em;
 }
