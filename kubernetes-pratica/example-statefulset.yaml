@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: StatefulSet
+metadata:
+  name: um-statefulset-qualquer
+spec:
+  #Restante omitido...
+    spec:
+      containers:
+        - name: nginx-container
+          image: nginx:latest
+          ports:
+            - containerPort: 80
+          volumeMounts:
+            - name: dados-persistidos
+              mountPath: /data-info
+      volumes:
+        - name: dados-persistidos
+          persistentVolumeClaim:
+            claimName: dados-pvc
+  #Restante omitido....
