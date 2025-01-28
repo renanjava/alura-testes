@@ -3,16 +3,20 @@
     --cinza-secundaria: #c0c0c0;
     --botao-azul: #167BF7;
     --cor-de-fundo: #00030C;
-}
-
-body {
-    background-color: var(--cor-de-fundo);
-    color: var(--branco-principal)
+    --fonte-principal: 'Inter'
 }
 
 * {
     padding: 0;
     margin: 0;
+}
+
+body {
+    background-color: var(--cor-de-fundo);
+    color: var(--branco-principal);
+    font-family: var(--fonte-principal);
+    font-weight: 400;
+    font-size: 16px;
 }
 
 .principal {
@@ -23,4 +27,30 @@ body {
 
 .container {
     height: 100vh;
+    display: grid;
+    grid-template-columns: 50% 50%;
+}
+
+.container__titulo {
+    font-size: 28px;
+    font-weight: 700;
+}
+
+.container__botao {
+    background-color: var(--botao-azul);
+    border-radius: 5px;
+    padding: 1em;
+    display: block;
+    color: var(--branco-principal);
+    text-decoration: none;
+}
+
+.container__aviso {
+    font-size: 12px;
+    color: var(--cinza-secundaria)
+}
+
+.botao_secundario {
+    background-color: transparent;
+    border: solid 2px var(--branco-principal);
 }
