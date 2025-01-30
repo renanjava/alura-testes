@@ -1,0 +1,18 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app # Nome do Deployment a ser escalado
+  minReplicas: 2 # Número mínimo de réplicas
+  maxReplicas: 10 # Número máximo de réplicas
+  metrics:
+    - type: Resource
+      resource:
+        name: cpu # Métrica usada para o escalonamento (CPU)
+        target:
+          type: Utilization
+          averageUtilization: 50 # Escala para manter o uso de CPU médio em 50%
