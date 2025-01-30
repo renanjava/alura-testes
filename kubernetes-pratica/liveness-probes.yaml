@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: liveness-example
+spec:
+  containers:
+    - name: my-app
+      image: my-app:latest
+      ports:
+        - containerPort: 8080
+      livenessProbe:
+        httpGet:
+          path: /health
+          port: 8080
+        initialDelaySeconds: 5 # Tempo inicial antes de iniciar as verificações
+        periodSeconds: 10 # Intervalo entre as verificações
+        failureThreshold: 3 # Número de falhas consecutivas antes de considerar o contêiner não saudável
+        successThreshold: 1 # Número de sucessos consecutivos necessários para considerar o contêiner saudável novamente
+        timeoutSeconds: 2 # Tempo máximo de espera pela resposta antes de marcar como falha

@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Pod
+metadata:
+  name: readiness-example
+spec:
+  containers:
+    - name: my-app
+      image: my-app:latest
+      ports:
+        - containerPort: 8080
+      readinessProbe:
+        httpGet:
+          path: /ready
+          port: 8080
+        initialDelaySeconds: 5 # Tempo de espera antes de iniciar a verificação de prontidão
+        periodSeconds: 10 # Intervalo entre as verificações
+        failureThreshold: 3 # Número de falhas consecutivas antes de marcar o contêiner como "não pronto"
+        successThreshold: 1 # Número de sucessos consecutivos para marcar o contêiner como "pronto"
+        timeoutSeconds: 2 # Tempo máximo de espera pela resposta antes de marcar como falha
