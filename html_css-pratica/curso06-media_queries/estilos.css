@@ -1,0 +1,108 @@
+@import url('./css/cabecalho.css');
+@import url('./css/destaque.css');
+@import url('./css/servicos.css');
+@import url('./css/planos.css');
+@import url('./css/ofertas.css');
+@import url('./css/parceiros.css');
+@import url('./css/newsletter.css');
+@import url('./css/rodape.css');
+
+:root {
+    /* Cores */
+
+    --cor-primaria-dark: #c13724;
+    --cor-primaria-light: #ee6451;
+    --cor-secundaria-light: #fff5eb;
+    --cor-secundaria-dark: #f5e6d6;
+    --cor-terciaria-medio: #cbda74;
+    --cor-terciaria-dark: #a2b72b;
+    --cor-terciaria-light: #eff2e1;
+    --cor-neutra-dark: #444444;
+    --cor-neutra-medio: #b9b9b9;
+    --cor-neutra-light: #ffffff;
+
+    --cor-primaria-box-shadow: rgba(193, 55, 36, 0.4);
+    --cor-secundaria-box-shadow: rgba(162, 183, , 0.4);
+
+    /* Tipografia */
+    --font-sigmar: "Sigmar", sans-serif;
+    --font-poppins: "Poppins", sans-serif;
+
+    /* Tamanhos de fonte */
+    --font-size-xxxl: 4.5rem;
+    --font-size-xxl: 2.625rem;
+    --fonte-size-xl: 2.438rem;
+    --fonte-size-l: 1.938rem;
+    --fonte-size-xm: 1.563rem;
+    --fonte-size-m: 1.25rem;
+    --fonte-size-b: 1rem;
+    --fonte-size-s: 0.813rem;
+
+    /* Altura da linhas */
+    --line-height: 120%;
+
+    /* Espaçamentos */
+    --padding-xs: 0.25rem;
+    --padding-s: 0.5rem;
+    --padding-m: 1rem;
+    --padding-l: 1.5rem;
+    --padding-xl: 2rem;
+    --padding-xxl: 2.5rem;
+    --padding-3xl: 3.75rem;
+    --padding-4xl: 4rem;
+    --padding-5xl: 4.75rem;
+
+    --gap-xs: 0.25rem;
+    --gap-s: 0.5rem;
+    --gap-m: 1rem;
+    --gap-l: 1.5rem;
+    --gap-xl: 2rem;
+    --gap-xxl: 2.5rem;
+    --gap-xxxl: 6rem;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    font-family: var(--font-sigmar);
+    line-height: var(--line-height);
+}
+
+h1 {
+    font-size: var(--font-size-xxxl);
+}
+
+h2 {
+    font-size: var(--font-size-xxl);
+}
+
+h3 {
+    font-size: var(--font-size-xl);
+}
+
+h4 {
+    font-size: var(--font-size-l);
+}
+
+h5 {
+    font-size: var(--font-size-xm);
+}
+
+body {
+    font-family: var(--font-poppins);
+    color: var(--cor-neutra-dark);
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    background-color: var(--cor-neutra-light);
+}
+
+.container {
+    width: 1200px;
+
+    @media (max-width: 768px) {
+        width: 648px;
+    }
+}

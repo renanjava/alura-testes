@@ -1,0 +1,30 @@
+.destaque {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--padding-5xl) 0;
+    background-color: var(--cor-secundaria-light);
+
+    @media (max-width: 768px) {
+        padding: var(--padding-xxl) var(--padding-3xl);
+    }
+}
+
+.banner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @media (max-width: 768px) {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+
+.destaque-titulo {
+    color: var(--cor-primaria-dark);
+}
+
+.destaque-titulo>span {
+    color: var(--cor-terciaria-dark);
+}

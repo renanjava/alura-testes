@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="shortcut icon" href="./assets/favicon.png" type="image/x-icon" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/normalize.css@8.0.1/normalize.min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.2/reset.min.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500&family=Sigmar&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="./estilos.css">
+  <title>Petpark</title>
+</head>
+
+<body>
+  <header class="cabecalho">
+    <div class="alinhamento-cabecalho container">
+      <img src="./assets/logo.png" alt="Logotipo do Petpark" />
+      <label class="label-busca" for="campo-busca">
+        <input class="input-busca" type="text" name="campo-busca" placeholder="O que você procura?" />
+        <div class="icone-busca">
+          <div></div>
+        </div>
+      </label>
+      <button class="botao-login">
+        <img class="icone-login" src="./assets/icones/login.png" alt="ícone de login" />
+        Login/Cadastro
+      </button>
+    </div>
+    <nav class="navegacao container">
+      <ul class="menu-lista">
+        <li class="menu-item">
+          <a class="menu-link" href="#">Raças</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="#">Planos Pet</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="#">Serviços</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="#">Sobre nós</a>
+        </li>
+        <li class="menu-item">
+          <a class="menu-link" href="#">Clube de descontos</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section class="destaque">
+      <div class="banner container">
+        <h1 class="destaque-titulo">
+          Seu melhor amigo,
+          <span>nosso maior cuidado!</span>
+        </h1>
+        <img src="./assets/imagens/banner.png"
+          alt="Imagem de dois pets, um gato cinza listrado e um cão husky nas cores branco e caramelo" />
+      </div>
+    </section>
+    <section class="servicos">
+      <h2 class="servicos-titulo">Nossos serviços</h2>
+      <ul class="servicos-lista">
+        <li class="banho-e-tosa">
+          <a class="link" href="#">Banho e Tosa</a>
+        </li>
+        <li class="hospedagem">
+          <a class="link" href="#">Hospedagem</a>
+        </li>
+        <li class="veterinario">
+          <a class="link" href="#">Veterinário</a>
+        </li>
+        <li class="adestramento">
+          <a class="link" href="#">Adestramento</a>
+        </li>
+        <li class="petsiter">
+          <a class="link" href="#">Petsiter</a>
+        </li>
+      </ul>
+    </section>
+    <section class="planos">
+      <div class="planos-background container">
+        <h2 class="planos-titulo">Planos mensais para seu pet</h2>
+        <div class="lista-planos">
+          <div class="cartao">
+            <img src="./assets/imagens/cheirosinho.png"
+              alt="Cachorrinho com um patinho de borracha cor de rosa na cabeça" />
+            <h3>Cheirosinho</h3>
+            <p>
+              Banho, tosa e corte de unhas 2x ao mês! O pacote econômico
+              essencial para o bem-estar do seu pet! Não inclui coleta.
+            </p>
+            <span>R$ 80</span>
+            <button class="botao-compra">Assinar plano</button>
+          </div>
+          <div class="cartao">
+            <img src="./assets/imagens/amiguinho.png" alt="Gato cinza" />
+            <h3>Amigo Fiel</h3>
+            <p>
+              Mais conforto para seu amigo! Banho, tosa, corte de unhas 2x ao
+              mês, 1 consulta veterinária e busca em domicílio!
+            </p>
+            <span>R$ 120</span>
+            <button class="botao-compra">Assinar plano</button>
+          </div>
+          <div class="cartao">
+            <img class="planos__imagem" src="./assets/imagens/pata-de-ouro.png"
+              alt="Cachorro com uma argola roxa na boca" />
+            <h3>Pata de Ouro</h3>
+            <p>
+              Seu amigo merece o mundo! Banho, tosa e unhas 3x ao mês, 1
+              consulta veterinária, busca em domicílio e adestramento!
+            </p>
+            <span>R$ 250</span>
+            <button class="botao-compra">Assinar plano</button>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section class="ofertas">
+      <h2 class="ofertas-titulo">Super ofertas:</h2>
+
+      <div class="container">
+        <ul class="carrossel">
+          <li class="carrossel-item">
+            <img class="carrossel-imagem" src="./assets/imagens/biskrock.png" alt="Biscoito Pedigree Biscrok" />
+            <h3 class="carrossel-nome">Biscoito Pedigree Biscrok</h3>
+            <p class="carrossel-descricao">Multi para Cães Adultos 500g</p>
+            <span class="carrossel-preco">R$ 19,99</span>
+          </li>
+          <li class="carrossel-item">
+            <img class="carrossel-imagem" src="./assets/imagens/golden-especial.png" alt="Ração Golden Special" />
+            <h3 class="carrossel-nome">Ração Golden Special</h3>
+            <p class="carrossel-descricao">
+              Cães Adultos Sabor Frango e Carne 15kg
+            </p>
+            <span class="carrossel-preco">R$ 149,00</span>
+          </li>
+          <li class="carrossel-item">
+            <img class="carrossel-imagem" src="./assets/imagens/pipicat.png" alt="Areia Higiênica Pipicat" />
+            <h3 class="carrossel-nome">Areia Higiênica Pipicat</h3>
+            <p class="carrossel-descricao">Classic para Gatos 4 Kg</p>
+            <span class="carrossel-preco">R$ 45,00</span>
+          </li>
+          <li class="carrossel-item">
+            <img class="carrossel-imagem" src="./assets/imagens/arranhador.png" alt="Arranhador São Benedito Pet" />
+            <h3 class="carrossel-nome">Arranhador São Benedito Pet</h3>
+            <p class="carrossel-descricao">Redondo com pluma e mola rosa</p>
+            <span class="carrossel-preco">R$ 59,90</span>
+          </li>
+          <div class="carrossel-button">
+            <button class="carrossel-nav">←</button>
+            <button class="carrossel-nav">→</button>
+          </div>
+        </ul>
+      </div>
+    </section>
+    <section class="parceiros">
+      <h2 class="parceiros-titulo">Marcas parceiras</h2>
+      <div class="lista-parceiros container">
+        <div>
+          <img src="./assets/imagens/petisco.png" alt="Petisco" />
+        </div>
+        <div>
+          <img src="./assets/imagens/pelos-e-patas.png" alt="Pelos e patas" />
+        </div>
+        <div>
+          <img src="./assets/imagens/miaw.png" alt="Miaw" />
+        </div>
+        <div>
+          <img src="./assets/imagens/wooofy.png" alt="Woofy" />
+        </div>
+        <div>
+          <img src="./assets/imagens/animalia.png" alt="Animalia" />
+        </div>
+        <div>
+          <img src="./assets/imagens/petstars.png" alt="Petstars" />
+        </div>
+        <div>
+          <img src="./assets/imagens/pet-mania.png" alt="Pet Mania" />
+        </div>
+        <div>
+          <img src="./assets/imagens/rooster.png" alt="Rooster" />
+        </div>
+        <div>
+          <img src="./assets/imagens/bicudos.png" alt="Bicudos" />
+        </div>
+        <div>
+          <img src="./assets/imagens/corgi.png" alt="Corgi" />
+        </div>
+        <div>
+          <img src="./assets/imagens/mascot.png" alt="Mascot" />
+        </div>
+        <div>
+          <img src="./assets/imagens/amigo-fiel.png" alt="Amigo Fiel" />
+        </div>
+      </div>
+    </section>
+    <section class="newsletter">
+      <h2>Assine nossa newsletter!</h2>
+      <p>Cadastre-se e receba nossas promoções e novidades!</p>
+      <form class="formulario">
+        <label for="email">
+          <input type="email" id="email" class="formulario-input" placeholder="Insira seu melhor email" required />
+        </label>
+        <div class="grupo-opcoes">
+          <span>Selecione seu pet:</span>
+          <label for="gato" class="opcao">
+            <input type="checkbox" id="gato" name="pet" value="gato" /> Gato
+            <span></span>
+          </label>
+          <label for="cao" class="opcao">
+            <input type="checkbox" id="cao" name="pet" value="cao" /> Cão
+            <span></span>
+          </label>
+          <label for="roedor" class="opcao">
+            <input type="checkbox" id="roedor" name="pet" value="roedor" />
+            <span></span> Roedor
+          </label>
+          <label for="outros" class="opcao">
+            <input type="checkbox" id="outros" name="pet" value="outros" />
+            <span></span> Outros
+          </label>
+        </div>
+        <button type="submit" class="botao-enviar">Inscrever</button>
+      </form>
+    </section>
+  </main>
+  <footer class="rodape">
+    <div class="rodape-bg container">
+      <div class="icones-rodape">
+        <p class="body-regular">Acesse nossas redes:</p>
+        <div>
+          <img class="icone-rodape" src="./assets/icones/whatsapp.png" alt="Whatsapp" />
+          <img class="icone-rodape" src="./assets/icones/instragam.png" alt="Instagram" />
+          <img class="icone-rodape" src="./assets/icones/tiktok.png" alt="Tiktok" />
+        </div>
+      </div>
+      <span>Desenvolvido por Alura. Projeto fictício sem fins comerciais.</span>
+    </div>
+  </footer>
+</body>
+
+</html>
