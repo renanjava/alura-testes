@@ -1,0 +1,10 @@
+- name: Instalando o python3, virtualenv
+    apt:
+        pkg:
+        - python3
+        - virtualenv
+        update_cache: yes
+    become: yes
+
+-> ansible-playbook playbook.yml -u ubuntu --private-key iac-alura.pem -i hosts.yml
+-> ssh -i "iac-alura.pem" ubuntu@ec2-35-167-77-253.us-west-2.compute.amazonaws.com
